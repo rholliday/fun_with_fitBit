@@ -3,14 +3,14 @@
     <sys_script_include action="INSERT_OR_UPDATE">
         <access>public</access>
         <active>true</active>
-        <api_name>x_fun_with_fitbit.FitBitOathHandler</api_name>
+        <api_name>x_fitbit.FitBitOauthHandler</api_name>
         <client_callable>false</client_callable>
-        <description/>
-        <name>FitBitOathHandler</name>
-        <script><![CDATA[var FitBitOathHandler = Class.create();
-FitBitOathHandler.prototype = {
-	
- 	logInfo:"fitOauthUtil logging",
+        <description>Utility class - custom functions to handle Autntication with FitBit API</description>
+        <name>FitBitOauthHandler</name>
+        <script><![CDATA[var FitBitOauthHandler = Class.create();
+FitBitOauthHandler.prototype = {
+
+ 	logInfo:"FitBitOauthHandler logging",
 	/* Called by a custom OAuth response provide name of the ouath profile */
 	initialize: function(/* Outbound REST name */ tokenReq, /* sysID of calling REST def*/callingID) {
 		try{
@@ -22,13 +22,13 @@ FitBitOathHandler.prototype = {
 		this.logInfo +="\n Calling REST MSG " + this.callingRestMsg.name;
 		this.oauthProfileRec = this.callingRestMsg.oauth2_profile;
 		this.logInfo +="\n Profile : " + this.oauthProfileRec.name;
-		this.oauthRegProfile = this._upsertReqProfile();
-		this.logInfo +="\n Oauth Requestor Profile : " + this.oauthRegProfile;
+		//this.oauthRegProfile = this._upsertReqProfile();
+		//this.logInfo +="\n Oauth Requestor Profile : " + this.oauthRegProfile;
 		gs.info(this.logInfo,"OauthInfo");
 
 		}
 		catch(err){
-		this.logInfo +="\n error intilizing fitOauthUtil\n" + err.message;	
+		this.logInfo +="\n error intilizing FitBitOauthHandler\n" + err.message;	
 			gs.error(this.logInfo,"OauthInfo");
 		}
 	},
@@ -52,9 +52,12 @@ FitBitOathHandler.prototype = {
 			var response = r.execute();
 			var responseBody = response.getBody();
 			var httpStatus = response.getStatusCode();
+			this.logInfo +="\nSTATUS : "+httpStatus;
+			this.logInfo +="\nBody :\n "+responseBody;
+			
 			var rspObject = JSON.parse(responseBody);
 			this._upsertToken(rspObject.access_token,"access_token",rspObject.expires_in);
-			this._upsertToken(rspObject.refresh_token,"refresh_token",86400);
+			//this._upsertToken(rspObject.refresh_token,"refresh_token",86400);
 			
 			var retStr =  this.logInfo + " Access token = " + rspObject.access_token;
 			
@@ -62,11 +65,12 @@ FitBitOathHandler.prototype = {
 			
 		}
 		catch(ex) {
-			var message = ex.getMessage();
+			this.logInfo +="\nerror in gettoken " + ex.getMessage();
+			gs.error(this.logInfo,"OauthInfo");
 		}
 		
 	},
-	
+	/*
 	_restMessageWithProfile: function(){
 		var grRestMsg = new GlideRecord("sys_rest_message");
 		grRestMsg.addQuery("authentication_type","oauth2");
@@ -77,13 +81,14 @@ FitBitOathHandler.prototype = {
 		}
 	},
 	
-	
+	*/
 	_upsertReqProfile: function(){
+		try{
 		this.logInfo +="\n getting Oauth Requestor Profile - oauth_entity_profile:" + this.oauthProfileRec.sys_id;
 		this.logInfo +=" requestor_id : " + this.callingRestMsg.sys_id;
 		var ReqProfileId = "";
 		var grRequestProfile = new GlideRecord("oauth_requestor_profile");
-		grRequestProfile.addQuery("oauth_entity_profile",this.oauthProfileRec.sys_id);
+		//grRequestProfile.addQuery("oauth_entity_profile",this.oauthProfileRec.sys_id);
 		grRequestProfile.addQuery("requestor_context","sys_rest_message");
 		grRequestProfile.addQuery("requestor_id",this.callingRestMsg.sys_id);
 		grRequestProfile.query();
@@ -91,11 +96,12 @@ FitBitOathHandler.prototype = {
 			//no update needed if alread there
 			//grRequestProfile.update();
 			ReqProfileId = grRequestProfile.sys_id+"";
+
 			this.logInfo +="\noauth_requestor_profile found ID: " + ReqProfileId;
 		}else{
-			grRequestProfile.inilize();
+			grRequestProfile.init();
 			grRequestProfile.requestor_context ="sys_rest_message";
-			grRequestProfile.oauth_entity_profile = this.oauthProfileRec.sys_id;
+			//grRequestProfile.oauth_entity_profile = this.oauthProfileRec.sys_id;
 			grRequestProfile.requestor_id =this.callingRestMsg.sys_id;
 			grRequestProfile.insert();
 			ReqProfileId = grRequestProfile.sys_id+"";
@@ -103,6 +109,10 @@ FitBitOathHandler.prototype = {
 
 		}
 		 return ReqProfileId;
+		}catch(err){
+			this.logInfo += "error _upsertReqProfile :\n" + err.message;
+			return"";
+		}
 		
 	},
 	_upsertToken: function(vToken,token_type, expSec){
@@ -134,21 +144,22 @@ FitBitOathHandler.prototype = {
 		}
 		
 	},
-    type: 'FitBitOathHandler'
+
+    type: 'FitBitOauthHandler'
 };]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2016-05-02 21:01:21</sys_created_on>
+        <sys_created_on>2016-05-05 04:01:29</sys_created_on>
         <sys_customer_update>true</sys_customer_update>
-        <sys_id>4a296347550312007f4460b4383769b2</sys_id>
-        <sys_mod_count>2</sys_mod_count>
-        <sys_name>FitBitOathHandler</sys_name>
-        <sys_package display_value="Fun with FitBit" source="x_fun_with_fitbit">235884517c4312007f446250bbef8d6d</sys_package>
+        <sys_id>7ebbc480781312007f442fb9b8ed6ee3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>FitBitOauthHandler</sys_name>
+        <sys_package display_value="fitbit" source="x_fitbit">116b4c00781312007f442fb9b8ed6ee0</sys_package>
         <sys_policy>read</sys_policy>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
-        <sys_scope display_value="Fun with FitBit">235884517c4312007f446250bbef8d6d</sys_scope>
-        <sys_update_name>sys_script_include_4a296347550312007f4460b4383769b2</sys_update_name>
+        <sys_scope display_value="fitbit">116b4c00781312007f442fb9b8ed6ee0</sys_scope>
+        <sys_update_name>sys_script_include_7ebbc480781312007f442fb9b8ed6ee3</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2016-05-03 00:18:19</sys_updated_on>
+        <sys_updated_on>2016-05-05 04:01:29</sys_updated_on>
     </sys_script_include>
 </record_update>

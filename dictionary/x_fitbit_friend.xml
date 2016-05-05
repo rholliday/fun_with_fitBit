@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="fitbit friend" max_length="40" name="x_fitbit_friend" type="collection"/>
+</database>
