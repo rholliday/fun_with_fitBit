@@ -12,7 +12,7 @@
         <sys_class_name>sys_user_role</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2016-05-05 03:54:14</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>116b4480781312007f442fb9b8ed6e6a</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>x_fitbit.user</sys_name>

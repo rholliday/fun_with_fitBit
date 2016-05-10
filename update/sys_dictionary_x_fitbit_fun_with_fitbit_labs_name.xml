@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <record_update>
-    <sys_dictionary action="INSERT_OR_UPDATE" element="" table="x_fitbit_friend">
+    <sys_dictionary action="INSERT_OR_UPDATE" element="name" table="x_fitbit_fun_with_fitbit_labs">
         <active>true</active>
         <array>false</array>
         <attributes/>
@@ -14,7 +14,7 @@
         <choice/>
         <choice_field/>
         <choice_table/>
-        <column_label/>
+        <column_label>Name</column_label>
         <comments/>
         <create_roles/>
         <default_value/>
@@ -27,13 +27,13 @@
         <dynamic_creation_script/>
         <dynamic_default_value/>
         <dynamic_ref_qual/>
-        <element/>
+        <element>name</element>
         <element_reference>false</element_reference>
         <foreign_database/>
-        <internal_type display_value="Collection">collection</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <mandatory>false</mandatory>
-        <max_length>40</max_length>
-        <name>x_fitbit_friend</name>
+        <max_length>100</max_length>
+        <name>x_fitbit_fun_with_fitbit_labs</name>
         <next_element/>
         <primary>false</primary>
         <read_only>false</read_only>
@@ -50,18 +50,18 @@
         <staged>false</staged>
         <sys_class_name>sys_dictionary</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2016-05-05 03:54:17</sys_created_on>
-        <sys_customer_update>false</sys_customer_update>
-        <sys_id>7a05d561751312007f44243ccfc14437</sys_id>
+        <sys_created_on>2016-05-10 01:11:30</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>5d75d5a1751312007f44243ccfc144f4</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name>x_fitbit_friend</sys_name>
+        <sys_name>Name</sys_name>
         <sys_package display_value="fitbit" source="x_fitbit">116b4c00781312007f442fb9b8ed6ee0</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="fitbit">116b4c00781312007f442fb9b8ed6ee0</sys_scope>
-        <sys_update_name>sys_dictionary_x_fitbit_friend_NULL</sys_update_name>
-        <sys_updated_by>system</sys_updated_by>
-        <sys_updated_on>2016-05-10 01:06:56</sys_updated_on>
+        <sys_update_name>sys_dictionary_x_fitbit_fun_with_fitbit_labs_name</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-05-10 01:11:30</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
