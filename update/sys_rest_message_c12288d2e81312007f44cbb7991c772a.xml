@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_rest_message">
+    <sys_rest_message action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <authentication_type>oauth2</authentication_type>
+        <basic_auth_password/>
+        <basic_auth_profile/>
+        <basic_auth_user/>
+        <description>Makes fitbit REST API call to get activities&#13;
+encodedid - The encoded ID of the user. Use "-" (dash) for current logged-in user.&#13;
+resource path - The resource path; see options in the "Resource Path Options" see website&#13;
+date -The range for which data will be returned.&#13;
+https://dev.fitbit.com/docs/activity/</description>
+        <name>friend activities</name>
+        <oauth2_profile display_value="fitbitOauth default_profile">e9361eb1419312007f442bbd1a5d8711</oauth2_profile>
+        <protocol_name/>
+        <rest_endpoint>https://api.fitbit.com/1/user/${encodedID}/${resourcePath}/date/${date}/${period}.json</rest_endpoint>
+        <sys_class_name>sys_rest_message</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-05-12 03:07:54</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>c12288d2e81312007f44cbb7991c772a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>friend activities</sys_name>
+        <sys_package display_value="fitbit" source="x_fitbit">116b4c00781312007f442fb9b8ed6ee0</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="fitbit">116b4c00781312007f442fb9b8ed6ee0</sys_scope>
+        <sys_update_name>sys_rest_message_c12288d2e81312007f44cbb7991c772a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-05-12 03:07:54</sys_updated_on>
+        <use_basic_auth>false</use_basic_auth>
+        <use_mutual_auth>false</use_mutual_auth>
+    </sys_rest_message>
+</record_update>

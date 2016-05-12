@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element extends="sys_import_set_row" label="import friends" max_length="40" name="x_fitbit_import_friends" type="collection">
+        <element attributes="import_attribute_name=averagedailysteps,edge_encryption_enabled=true" label="Averagedailysteps" max_length="40" name="averagedailysteps" type="string"/>
+        <element attributes="import_attribute_name=city,edge_encryption_enabled=true" label="City" max_length="40" name="city" type="string"/>
+        <element attributes="import_attribute_name=country,edge_encryption_enabled=true" label="Country" max_length="40" name="country" type="string"/>
+        <element attributes="import_attribute_name=displayname,edge_encryption_enabled=true" label="Displayname" max_length="40" name="displayname" type="string"/>
+        <element attributes="import_attribute_name=encodedid,edge_encryption_enabled=true" label="Encodedid" max_length="40" name="encodedid" type="string"/>
+    </element>
+</database>

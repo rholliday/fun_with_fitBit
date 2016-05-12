@@ -7,8 +7,8 @@
         <auth_code_lifespan>0</auth_code_lifespan>
         <auth_url>https://www.fitbit.com/oauth2/authorize</auth_url>
         <certificate_url/>
-        <client_id>enter Your Client ID</client_id>
-        <client_secret>twv5kKJWgWRwar+VTU5t3gqw0ElFe5vL</client_secret>
+        <client_id>Your Client ID from Fitbit</client_id>
+        <client_secret>uwEhrylUXyGE/eWDqSTgqWNFNyiyf4sb</client_secret>
         <client_uuid>b8859eb1419312007f442bbd1a5d87ef</client_uuid>
         <comments/>
         <default_grant_type>authorization_code</default_grant_type>
@@ -17,7 +17,7 @@
         <message_signature_lifespan>0</message_signature_lifespan>
         <name>fitbitOauth</name>
         <oauth_api_script display_value="OAuthUtil">3e3a3a11c333210016194ffe5bba8f70</oauth_api_script>
-        <redirect_url>https://ec2-st-526-dev.lab.service-now.comoauth_redirect.do</redirect_url>
+        <redirect_url>https://[Your Instance Here].service-now.com/api/x_fitbit/fitbitauth</redirect_url>
         <refresh_token_lifespan>8640000</refresh_token_lifespan>
         <revoke_token_url/>
         <salt>0</salt>
@@ -26,15 +26,15 @@
         <sys_created_on>2016-05-11 00:30:06</sys_created_on>
         <sys_customer_update>true</sys_customer_update>
         <sys_id>3c859eb1419312007f442bbd1a5d87ef</sys_id>
-        <sys_mod_count>2</sys_mod_count>
-        <sys_name>enter Your Client ID</sys_name>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>Your Client ID from Fitbit</sys_name>
         <sys_package display_value="fitbit" source="x_fitbit">116b4c00781312007f442fb9b8ed6ee0</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="fitbit">116b4c00781312007f442fb9b8ed6ee0</sys_scope>
         <sys_update_name>oauth_entity_3c859eb1419312007f442bbd1a5d87ef</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2016-05-11 01:41:19</sys_updated_on>
+        <sys_updated_on>2016-05-12 20:23:07</sys_updated_on>
         <token_url>https://api.fitbit.com/oauth2/token</token_url>
         <type>oauth_provider</type>
         <user/>

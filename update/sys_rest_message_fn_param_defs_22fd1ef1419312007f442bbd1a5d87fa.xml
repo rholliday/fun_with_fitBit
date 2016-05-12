@@ -7,7 +7,7 @@
         <sys_class_name>sys_rest_message_fn_param_defs</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2016-05-11 01:07:30</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>22fd1ef1419312007f442bbd1a5d87fa</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>redirect_uri</sys_name>

@@ -12,6 +12,163 @@ fitbitUtils.prototype = {
 	initialize: function() {
 	},
 	
+	/*****************************************************************
+ 	* Function call REST message to get Friends
+ 	* Enters Result in table
+ 	*
+ 	******************************************************************
+ 	* No inputs
+ 	*******************************************************************/
+	
+	
+	getFriends:function(){
+		try {
+			var r = new sn_ws.RESTMessageV2('x_fitbit.fitbit friends', 'get');
+			
+			//override authentication profile
+			//authentication type ='basic'/ 'oauth2'
+			//r.setAuthentication(authentication type, profile name);
+			
+			var response = r.execute();
+			var responseBody = response.getBody();
+			var httpStatus = response.getStatusCode();
+			if (httpStatus=='200'){
+				var friends= global.JSON.parse(responseBody).friends;
+				for (cnt=0;cnt<friends.length;cnt++){
+					this.addrow('x_fitbit_import_friends',friends[cnt].user);
+				}
+			}
+		}
+		catch(ex) {
+			gs.error('Error Get friends' + ex.getMessage());
+		}
+	},
+	
+	/*****************************************************************
+ 	* Function call REST message to get Friends activitity
+ 	* Returns the response body as an object
+ 	*
+ 	******************************************************************
+ 	* Input encoded ID -
+ 	*       resourse path
+ 	*******************************************************************/
+	getActivity:function(encodedID,resourcePath){
+		try {
+			var r = new sn_ws.RESTMessageV2('x_fitbit.friend activities', 'get');
+			r.setStringParameter('resourcePath', resourcePath);
+			r.setStringParameter('period', '1w');
+			r.setStringParameter('date', 'today');
+			r.setStringParameter('encodedID', encodedID);
+			
+			//override authentication profile
+			//authentication type ='basic'/ 'oauth2'
+			//r.setAuthentication(authentication type, profile name);
+			
+			var response = r.execute();
+			var responseBody = response.getBody();
+			var httpStatus = response.getStatusCode();
+			var respObj = global.JSON.parse(responseBody);
+			//returns error if friend has not shared activities.
+			//skip these
+			if (respObj['errors']){
+				gs.error(responseBody);
+				return {};
+			}
+			else{
+				return respObj;
+			}
+		}
+		catch(ex) {
+			gs.error("Error getting " + resourcePath + " for " + encodedID +" \n"+  ex.getMessage());
+		}
+	},
+	/*****************************************************************
+ 	* Function call REST message to get Friends steps
+ 	* Enters Result in table
+ 	*
+ 	******************************************************************
+ 	* Input encoded ID
+ 	*******************************************************************/
+	getSteps:function(encodedID){
+		try {
+			var respObj = this.getActivity(encodedID,'activities/tracker/steps');
+			//returns error if friend has not shared activities.
+			//skip these
+			if (respObj['errors']){
+				gs.error(respObj);
+			}
+			if (respObj['activities-tracker-steps']){
+				var steps= respObj['activities-tracker-steps'];
+				for (var day in steps){
+					//add the encoded id property the object to be mapped in addrow
+					steps[day].encodedid=encodedID;
+					this.addrow('x_fitbit_import_friend_steps',steps[day]);
+				}
+			}
+		}
+		catch(ex) {
+			gs.error("Error getting steps for " + encodedID +" \n"+  ex.message);
+		}
+	},
+	
+	
+	/*****************************************************************
+ 	* Function call REST message to get Friends floors
+ 	* Enters Result in table
+ 	*
+ 	******************************************************************
+ 	* Input encoded ID
+ 	*******************************************************************/
+	getFloors:function(encodedID){
+		try {
+			var respObj = this.getActivity(encodedID,'activities/tracker/floors');
+			//returns error if friend has not shared activities.
+			//skip these
+			if (respObj['errors']){
+				gs.error(respObj);
+			}
+			if (respObj['activities-tracker-floors']){
+				var floors= respObj['activities-tracker-floors'];
+				for (var day in floors){
+					//add the encoded id property the object to be mapped in addrow
+					floors[day].encodedid=encodedID;
+					this.addrow('x_fitbit_import_friend_floors',floors[day]);
+				}
+			}
+		}
+		catch(ex) {
+			gs.error("Error getting floors for " + encodedID +" \n"+  ex.message);
+		}
+	},
+	
+	
+	/*****************************************************************
+ 	* Function will walk an object properties
+ 	* if property name matches the table feild.
+ 	* is set the field to the value
+ 	******************************************************************
+ 	* input email address of Friend to invite
+ 	*******************************************************************/
+	
+	inviteFriend:function(inviteEmail){
+		try {
+			var r = new sn_ws.RESTMessageV2('x_fitbit.Fitbit friends invite', 'post');
+			r.setStringParameter('inviteEmail', inviteEmail);
+			
+			//override authentication profile
+			//authentication type ='basic'/ 'oauth2'
+			//r.setAuthentication(authentication type, profile name);
+			
+			var response = r.execute();
+			var responseBody = response.getBody();
+			var httpStatus = response.getStatusCode();
+		}
+		catch(ex) {
+			gs.error("Error sending friend invite " + ex.getMessage());
+		}
+	},
+	
+	
 	
 	/*****************************************************************
  	* Function will walk an object properties
@@ -43,7 +200,7 @@ fitbitUtils.prototype = {
         <sys_created_on>2016-05-11 00:35:36</sys_created_on>
         <sys_customer_update>true</sys_customer_update>
         <sys_id>ce2756f1419312007f442bbd1a5d87f0</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_name>fitbitUtils</sys_name>
         <sys_package display_value="fitbit" source="x_fitbit">116b4c00781312007f442fb9b8ed6ee0</sys_package>
         <sys_policy/>
@@ -51,6 +208,6 @@ fitbitUtils.prototype = {
         <sys_scope display_value="fitbit">116b4c00781312007f442fb9b8ed6ee0</sys_scope>
         <sys_update_name>sys_script_include_ce2756f1419312007f442bbd1a5d87f0</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2016-05-11 00:40:38</sys_updated_on>
+        <sys_updated_on>2016-05-12 17:41:00</sys_updated_on>
     </sys_script_include>
 </record_update>

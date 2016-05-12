@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element extends="sys_import_set_row" label="import friend steps" max_length="40" name="x_fitbit_import_friend_steps" type="collection">
+        <element attributes="import_attribute_name=datetime,edge_encryption_enabled=true" label="Datetime" max_length="40" name="datetime" type="string"/>
+        <element attributes="import_attribute_name=encodedid,edge_encryption_enabled=true" label="Encodedid" max_length="40" name="encodedid" type="string"/>
+        <element attributes="import_attribute_name=value,edge_encryption_enabled=true" label="Value" max_length="40" name="value" type="string"/>
+    </element>
+</database>

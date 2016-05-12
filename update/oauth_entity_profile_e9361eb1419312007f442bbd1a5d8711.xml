@@ -4,11 +4,11 @@
         <default>true</default>
         <grant_type>authorization_code</grant_type>
         <name>fitbitOauth default_profile</name>
-        <oauth_entity display_value="enter Your Client ID">3c859eb1419312007f442bbd1a5d87ef</oauth_entity>
+        <oauth_entity display_value="Your Client ID from Fitbit">3c859eb1419312007f442bbd1a5d87ef</oauth_entity>
         <sys_class_name>oauth_entity_profile</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2016-05-11 00:30:06</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>e9361eb1419312007f442bbd1a5d8711</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>fitbitOauth default_profile</sys_name>

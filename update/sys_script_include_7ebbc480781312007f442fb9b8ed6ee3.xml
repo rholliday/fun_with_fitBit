@@ -56,7 +56,9 @@ FitBitOauthHandler.prototype = {
 			this.logInfo +="\nBody :\n "+responseBody;
 			
 			var rspObject = JSON.parse(responseBody);
-			this._upsertToken(rspObject.access_token,"access_token",rspObject.expires_in);
+			if (rspObject.access_token){			this._upsertToken(rspObject.access_token,"access_token",rspObject.expires_in);
+				this.logInfo += "<b>Unable to get at Token</b>";						
+									   }
 			//this._upsertToken(rspObject.refresh_token,"refresh_token",86400);
 			
 			var retStr =  this.logInfo + " Access token = " + rspObject.access_token;
@@ -150,9 +152,9 @@ FitBitOauthHandler.prototype = {
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2016-05-05 04:01:29</sys_created_on>
-        <sys_customer_update>false</sys_customer_update>
+        <sys_customer_update>true</sys_customer_update>
         <sys_id>7ebbc480781312007f442fb9b8ed6ee3</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name>FitBitOauthHandler</sys_name>
         <sys_package display_value="fitbit" source="x_fitbit">116b4c00781312007f442fb9b8ed6ee0</sys_package>
         <sys_policy>read</sys_policy>
@@ -160,6 +162,6 @@ FitBitOauthHandler.prototype = {
         <sys_scope display_value="fitbit">116b4c00781312007f442fb9b8ed6ee0</sys_scope>
         <sys_update_name>sys_script_include_7ebbc480781312007f442fb9b8ed6ee3</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2016-05-05 04:01:29</sys_updated_on>
+        <sys_updated_on>2016-05-12 02:32:57</sys_updated_on>
     </sys_script_include>
 </record_update>

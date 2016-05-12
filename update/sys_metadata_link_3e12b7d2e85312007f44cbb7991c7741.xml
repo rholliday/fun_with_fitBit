@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>61f6db12e85312007f44cbb7991c77e8</documentkey>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;record_update table="x_fitbit_fun_with_fitbit_labs"&gt;
+    &lt;x_fitbit_fun_with_fitbit_labs action="INSERT_OR_UPDATE"&gt;
+        &lt;code_sample/&gt;
+        &lt;details&gt;&lt;![CDATA[&lt;h1&gt;&lt;font size="4"&gt;Full Demo App Set up info&lt;/font&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;font size="4"&gt; &lt;/font&gt;&lt;/p&gt;
+&lt;ol&gt;&lt;li&gt;&lt;font size="4"&gt;Register your application in fitbit LAB 1.1 step 1&lt;/font&gt;&lt;br /&gt;&lt;font size="4"&gt; Set redirect url &amp;#61; &lt;a href="https://[instance]/api/x_fitbit/fitbitauth" rel="nofollow"&gt;https://[instance]/api/x_fitbit/fitbitauth&lt;/a&gt;&lt;/font&gt;&lt;br /&gt;&lt;font size="4"&gt; Copy Client ID and Client Secret from fitbit&lt;/font&gt;&lt;/li&gt;&lt;/ol&gt;
+&lt;p&gt;&lt;font size="4"&gt; &lt;/font&gt;&lt;/p&gt;
+&lt;ol start="2"&gt;&lt;li&gt;&lt;font size="4"&gt;Open system OAuth &amp;gt;&amp;gt; Application Registry &amp;gt;&amp;gt; fitbitOauth&lt;/font&gt;&lt;br /&gt;&lt;font size="4"&gt; Update the Client ID Client Secret values&lt;/font&gt;&lt;br /&gt;&lt;font size="4"&gt; Update the Redirect URL to point to your instance https://[instance]/api/x_fitbit/fitbitauth&lt;/font&gt;&lt;/li&gt;&lt;/ol&gt;
+&lt;p&gt;&lt;font size="4"&gt; &lt;/font&gt;&lt;/p&gt;
+&lt;ol start="3"&gt;&lt;li&gt;&lt;font size="4"&gt;Open &lt;a href="http://www.freeformatter.com/base64-encoder.html" rel="nofollow"&gt;http://www.freeformatter.com/base64-encoder.html&lt;/a&gt;&lt;/font&gt;&lt;br /&gt;&lt;font size="4"&gt; Base64 encode the [client id value]:[Client Secret value]&lt;/font&gt;&lt;/li&gt;&lt;/ol&gt;
+&lt;p&gt;&lt;font size="4"&gt; &lt;/font&gt;&lt;/p&gt;
+&lt;ol start="4"&gt;&lt;li&gt;&lt;font size="4"&gt;Open REST Message &amp;gt;&amp;gt; &lt;strong&gt;fitbitOauthGetToken&lt;/strong&gt;&lt;/font&gt;&lt;/li&gt;&lt;/ol&gt;
+&lt;p&gt;&lt;font size="4"&gt; &lt;/font&gt;&lt;/p&gt;
+&lt;ol start="5"&gt;&lt;li&gt;&lt;font size="4"&gt;Open Post function Update Authorization Header with encoded value from step 3&lt;/font&gt;&lt;br /&gt;&lt;font size="4"&gt; Authorization Basic #######################&lt;/font&gt;&lt;/li&gt;&lt;/ol&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;]]&gt;&lt;/details&gt;
+        &lt;name&gt;Setting up the Full Demo App Branch&lt;/name&gt;
+        &lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;
+        &lt;sys_created_on&gt;2016-05-12 18:30:50&lt;/sys_created_on&gt;
+        &lt;sys_id&gt;61f6db12e85312007f44cbb7991c77e8&lt;/sys_id&gt;
+        &lt;sys_mod_count&gt;1&lt;/sys_mod_count&gt;
+        &lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;
+        &lt;sys_updated_on&gt;2016-05-12 20:28:16&lt;/sys_updated_on&gt;
+    &lt;/x_fitbit_fun_with_fitbit_labs&gt;
+&lt;/record_update&gt;
+</payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-05-12 20:28:34</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>3e12b7d2e85312007f44cbb7991c7741</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Setting up the Full Demo App Branch</sys_name>
+        <sys_package display_value="fitbit" source="x_fitbit">116b4c00781312007f442fb9b8ed6ee0</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="fitbit">116b4c00781312007f442fb9b8ed6ee0</sys_scope>
+        <sys_update_name>sys_metadata_link_3e12b7d2e85312007f44cbb7991c7741</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-05-12 20:28:34</sys_updated_on>
+        <tablename>x_fitbit_fun_with_fitbit_labs</tablename>
+    </sys_metadata_link>
+</record_update>

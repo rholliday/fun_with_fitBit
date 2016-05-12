@@ -2,12 +2,12 @@
 <record_update table="oauth_entity_scope">
     <oauth_entity_scope action="INSERT_OR_UPDATE">
         <name>Default scope</name>
-        <oauth_entity display_value="enter Your Client ID">3c859eb1419312007f442bbd1a5d87ef</oauth_entity>
+        <oauth_entity display_value="Your Client ID from Fitbit">3c859eb1419312007f442bbd1a5d87ef</oauth_entity>
         <oauth_entity_scope>social activity</oauth_entity_scope>
         <sys_class_name>oauth_entity_scope</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2016-05-11 00:30:59</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>733616f1419312007f442bbd1a5d8725</sys_id>
         <sys_mod_count>1</sys_mod_count>
         <sys_name>Default scope</sys_name>

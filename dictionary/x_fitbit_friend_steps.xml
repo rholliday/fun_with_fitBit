@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Friend Steps" max_length="40" name="x_fitbit_friend_steps" type="collection">
+        <element label="Day" max_length="40" name="datetime" type="glide_date"/>
+        <element label="Friend" max_length="32" name="encodedid" reference="x_fitbit_friend" type="reference"/>
+        <element label="Steps" max_length="40" name="value" type="string"/>
+        <index name="index">
+            <element name="encodedid"/>
+        </index>
+    </element>
+</database>
