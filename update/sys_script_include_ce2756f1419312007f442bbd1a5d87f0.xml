@@ -41,7 +41,7 @@ fitbitUtils.prototype = {
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2016-05-11 00:35:36</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>ce2756f1419312007f442bbd1a5d87f0</sys_id>
         <sys_mod_count>1</sys_mod_count>
         <sys_name>fitbitUtils</sys_name>
