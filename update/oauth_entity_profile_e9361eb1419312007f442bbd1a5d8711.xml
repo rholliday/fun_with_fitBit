@@ -4,7 +4,7 @@
         <default>true</default>
         <grant_type>authorization_code</grant_type>
         <name>fitbitOauth default_profile</name>
-        <oauth_entity display_value="enter Your Client ID">3c859eb1419312007f442bbd1a5d87ef</oauth_entity>
+        <oauth_entity display_value="227M5V">3c859eb1419312007f442bbd1a5d87ef</oauth_entity>
         <sys_class_name>oauth_entity_profile</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2016-05-11 00:30:06</sys_created_on>

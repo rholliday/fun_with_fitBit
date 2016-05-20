@@ -2,7 +2,7 @@
 <record_update table="oauth_entity_scope">
     <oauth_entity_scope action="INSERT_OR_UPDATE">
         <name>Default scope</name>
-        <oauth_entity display_value="enter Your Client ID">3c859eb1419312007f442bbd1a5d87ef</oauth_entity>
+        <oauth_entity display_value="227M5V">3c859eb1419312007f442bbd1a5d87ef</oauth_entity>
         <oauth_entity_scope>social activity</oauth_entity_scope>
         <sys_class_name>oauth_entity_scope</sys_class_name>
         <sys_created_by>admin</sys_created_by>
